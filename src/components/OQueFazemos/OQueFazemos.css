@@ -1,0 +1,163 @@
+.oqf-section {
+  padding: 80px 5%;
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.oqf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.oqf-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.oqf-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.oqf-header p {
+  font-size: 1rem;
+  color: #555;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Carousel wrapper */
+.oqf-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.oqf-carousel-btn {
+  background: #008f39;
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.oqf-carousel-btn:hover {
+  background: #006d2c;
+  transform: scale(1.08);
+}
+
+/* Track — shows 3 cards */
+.oqf-carousel-track {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+  justify-content: center;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* Card */
+.oqf-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 0 0 calc((100% - 80px) / 3);
+  max-width: 280px;
+  padding: 16px;
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.oqf-image-circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 4px solid #008f39;
+}
+
+.oqf-image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.oqf-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #008f39;
+  margin-bottom: 10px;
+}
+
+.oqf-card p {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Dots */
+.oqf-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.oqf-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.oqf-dot.active {
+  background: #008f39;
+  transform: scale(1.3);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .oqf-carousel-track {
+    gap: 20px;
+  }
+  .oqf-card {
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .oqf-header h2 {
+    font-size: 1.8rem;
+  }
+  .oqf-carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .oqf-card {
+    flex: 0 0 100%;
+    max-width: 260px;
+  }
+}

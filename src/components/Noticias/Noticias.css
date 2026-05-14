@@ -1,0 +1,269 @@
+.noticias-section {
+  padding: 80px 5%;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.noticias-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.noticias-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.noticias-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.noticias-header p {
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Carousel wrapper */
+.noticias-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.noticias-btn {
+  background: #008f39;
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.noticias-btn:hover {
+  background: #006d2c;
+  transform: scale(1.08);
+}
+
+/* Track — 3 cards visíveis */
+.noticias-track {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+  justify-content: center;
+  overflow: hidden;
+  padding: 12px 4px;
+}
+
+/* Card de notícia */
+.noticia-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc((100% - 64px) / 3);
+  max-width: 380px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideIn 0.35s ease;
+}
+
+.noticia-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Imagem do card */
+.noticia-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.noticia-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.noticia-card:hover .noticia-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.noticia-categoria {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #008f39;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* Corpo do card */
+.noticia-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.noticia-data {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 500;
+}
+
+.noticia-body h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+}
+
+.noticia-body p {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.noticia-leia-mais {
+  display: none;
+}
+
+/* Dots */
+.noticias-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 36px;
+}
+
+.noticias-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.noticias-dot.active {
+  background: #008f39;
+  transform: scale(1.3);
+}
+
+/* Empty state */
+.noticias-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+  border-radius: 16px;
+  margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+  .noticias-section {
+    padding: 50px 16px;
+  }
+
+  .noticias-track {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .noticias-carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .noticias-track {
+    gap: 16px;
+    flex: 1;
+    max-width: 100%;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .noticia-card {
+    flex: 1;
+    width: 100%;
+    max-width: 380px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  .noticia-img-wrapper {
+    height: 180px;
+  }
+
+  .noticias-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+
+  .noticia-body {
+    padding: 16px;
+  }
+
+  .noticia-body h3 {
+    font-size: 0.95rem;
+  }
+
+  .noticia-body p {
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .noticias-carousel-wrapper {
+    align-items: center;
+  }
+
+  .noticias-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .noticia-img-wrapper {
+    height: 160px;
+  }
+}

@@ -1,0 +1,127 @@
+.quem-somos-section {
+  padding: 100px 10%;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.quem-somos-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quem-somos-content {
+  flex: 1;
+}
+
+.quem-somos-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a4f2c; /* A nice deep green to match agriculture */
+  margin-bottom: 15px;
+}
+
+.quem-somos-content .divider {
+  width: 60px;
+  height: 4px;
+  background-color: #27ae60;
+  margin-bottom: 30px;
+  border-radius: 2px;
+}
+
+.quem-somos-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #219653;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+}
+
+.quem-somos-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.quem-somos-image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.quem-somos-image img:hover {
+  transform: scale(1.02);
+}
+
+.mapa-voltar-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--verde-floresta);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.quem-somos-image:hover .mapa-voltar-btn {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.mapa-voltar-btn:hover {
+  background: #1a4f2c;
+}
+
+@media (max-width: 900px) {
+  .quem-somos-container {
+    flex-direction: column;
+  }
+
+  .quem-somos-content h2 {
+    font-size: 2rem;
+  }
+
+  .mapa-voltar-btn {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+    opacity: 1;
+  }
+}
