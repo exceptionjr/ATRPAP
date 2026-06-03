@@ -99,3 +99,20 @@ coverage/
 # Misc
 *.tgz
 *.tar.gz
+
+# Django backend
+backend/venv/
+backendvenv/
+venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/staticfiles/
+backend/media/
+backend/db.sqlite3
+
+# Documentos gerados localmente
+*.docx
+*.xlsx
+generate_pipefy_doc.py
+GUIA_DE_USO.md
+INTEGRATION_GUIDE.md

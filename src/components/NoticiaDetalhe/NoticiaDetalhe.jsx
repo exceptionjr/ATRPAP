@@ -1,23 +1,51 @@
-import React, { useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { noticias } from '../Noticias/Noticias';
+import { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { publicGet } from '../../api';
 import './NoticiaDetalhe.css';
+
+const CATEGORIA_LABEL = {
+  assinaturas: 'Assinaturas',
+  construcao:  'Construção',
+  producao:    'Produção',
+  credito:     'Crédito',
+  eventos:     'Eventos',
+  geral:       'Geral',
+};
+
+function formatarData(dateStr) {
+  if (!dateStr) return '';
+  const meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  const [year, month, day] = dateStr.split('-');
+  return `${parseInt(day)} ${meses[parseInt(month) - 1]} ${year}`;
+}
 
 export default function NoticiaDetalhe() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const noticia = noticias.find((n) => n.id === id);
+  const [noticia, setNoticia] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    publicGet(`/noticias/${id}/`)
+      .then(setNoticia)
+      .catch(() => setNoticia(null))
+      .finally(() => setLoading(false));
+  }, [id]);
 
   const handleShareWhatsApp = () => {
     const url = window.location.href;
     const text = `Confira esta notícia: ${noticia.titulo} - ${url}`;
-    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  if (loading) {
+    return (
+      <div className="noticia-detalhe-not-found">
+        <p>Carregando...</p>
+      </div>
+    );
+  }
 
   if (!noticia) {
     return (
@@ -33,27 +61,25 @@ export default function NoticiaDetalhe() {
   return (
     <section className="noticia-detalhe-section">
       <div className="noticia-detalhe-container">
-        <button onClick={() => navigate('/')} className="btn-voltar-top">
+        <button onClick={() => navigate(-1)} className="btn-voltar-top">
           &#8592; Voltar
         </button>
         <div className="noticia-detalhe-header">
-          <span className="noticia-detalhe-categoria">{noticia.categoria}</span>
-          <span className="noticia-detalhe-data">{noticia.data}</span>
+          <span className="noticia-detalhe-categoria">
+            {CATEGORIA_LABEL[noticia.categoria] ?? noticia.categoria}
+          </span>
+          <span className="noticia-detalhe-data">{formatarData(noticia.data)}</span>
         </div>
         <h1 className="noticia-detalhe-titulo">{noticia.titulo}</h1>
-        <div className="noticia-detalhe-img-wrapper">
-          <img src={noticia.imagem} alt={noticia.titulo} />
-        </div>
-        <div className="noticia-detalhe-conteudo">
-          {noticia.conteudo ? (
-            noticia.conteudo
-          ) : (
-            <>
-              <p>{noticia.resumo}</p>
-              <p>Esta notícia ainda não possui um conteúdo completo cadastrado.</p>
-            </>
-          )}
-        </div>
+        {noticia.imagem && (
+          <div className="noticia-detalhe-img-wrapper">
+            <img src={noticia.imagem} alt={noticia.titulo} />
+          </div>
+        )}
+        <div
+          className="noticia-detalhe-conteudo"
+          dangerouslySetInnerHTML={{ __html: noticia.conteudo || `<p>${noticia.resumo}</p>` }}
+        />
 
         <div className="noticia-detalhe-assinatura">
           <h4>ATRPAP</h4>
