@@ -117,3 +117,10 @@ backend/db.sqlite3
 generate_pipefy_doc.py
 GUIA_DE_USO.md
 INTEGRATION_GUIDE.md
+README.md
+
+# Arquivos de deploy redundantes (usamos Dockerfile + railway.toml na raiz)
+backend/Procfile
+backend/runtime.txt
+backend/railway.toml
+backend/nixpacks.toml
