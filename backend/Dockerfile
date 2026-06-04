@@ -9,11 +9,12 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+# Caminhos relativos à raiz do repositório (contexto de build do Railway)
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt gunicorn
 
-COPY . .
+COPY backend/ .
 
 ENV PYTHONUNBUFFERED=1
 
-CMD gunicorn core.wsgi:application --bind 0.0.0.0:$PORT
+CMD ["sh", "-c", "gunicorn core.wsgi:application --bind 0.0.0.0:$PORT"]
