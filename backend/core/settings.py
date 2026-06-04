@@ -87,7 +87,6 @@ elif DB_ENGINE == 'django.db.backends.mysql':
             'CONN_MAX_AGE': 0,
             'OPTIONS': {
                 'charset': 'utf8mb4',
-                'reconnect': True,
                 'connect_timeout': 30,
             },
         }
