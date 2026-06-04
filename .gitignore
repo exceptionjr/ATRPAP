@@ -113,6 +113,7 @@ backend/db.sqlite3
 # Documentos gerados localmente
 *.docx
 *.xlsx
+.~lock.*#
 generate_pipefy_doc.py
 GUIA_DE_USO.md
 INTEGRATION_GUIDE.md
