@@ -84,8 +84,11 @@ elif DB_ENGINE == 'django.db.backends.mysql':
             'PASSWORD': config('DB_PASSWORD'),
             'HOST': config('DB_HOST', default='localhost'),
             'PORT': config('DB_PORT', default='3306'),
+            'CONN_MAX_AGE': 0,
             'OPTIONS': {
                 'charset': 'utf8mb4',
+                'reconnect': True,
+                'connect_timeout': 30,
             },
         }
     }
