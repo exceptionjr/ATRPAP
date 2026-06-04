@@ -1,0 +1,393 @@
+/* ═══════════════════════════════════════════════════════
+   ATRPAP — Painel Administrativo
+   Paleta: verde-escuro #1B5E20 · verde #2E7D32 · claro #A5D6A7
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Variáveis ─────────────────────────────────────────── */
+:root {
+  --verde-escuro:  #1B5E20;
+  --verde-medio:   #2E7D32;
+  --verde-claro:   #A5D6A7;
+  --verde-bg:      #E8F5E9;
+  --verde-hover:   #388E3C;
+  --branco:        #FFFFFF;
+  --cinza-escuro:  #374749;
+  --cinza-claro:   #F5F5F5;
+  --sombra:        0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* ── Fonte global ──────────────────────────────────────── */
+body, .navbar, .sidebar, h1, h2, h3, h4, h5 {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   PÁGINA DE LOGIN
+   ══════════════════════════════════════════════════════════ */
+.login-page {
+  background: linear-gradient(160deg, #1B5E20 0%, #2E7D32 60%, #43A047 100%) !important;
+  min-height: 100vh;
+}
+
+.login-box {
+  border-radius: 16px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25) !important;
+  overflow: hidden;
+  border: none !important;
+}
+
+.login-box .card-header {
+  background: var(--verde-escuro) !important;
+  padding: 2rem !important;
+  text-align: center;
+  border-bottom: 3px solid var(--verde-claro) !important;
+}
+
+.login-box .card-header h1,
+.login-box .card-header p {
+  color: var(--branco) !important;
+}
+
+.login-box .card-body {
+  background: var(--branco) !important;
+  padding: 2rem !important;
+}
+
+.login-box .form-control {
+  border-radius: 8px !important;
+  border: 2px solid #e0e0e0 !important;
+  padding: 0.6rem 1rem !important;
+  transition: border-color 0.2s;
+}
+
+.login-box .form-control:focus {
+  border-color: var(--verde-medio) !important;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.15) !important;
+}
+
+.login-box .btn-primary,
+.login-box [type="submit"] {
+  background: var(--verde-medio) !important;
+  border-color: var(--verde-medio) !important;
+  border-radius: 8px !important;
+  padding: 0.6rem 2rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  transition: background 0.2s !important;
+}
+
+.login-box .btn-primary:hover,
+.login-box [type="submit"]:hover {
+  background: var(--verde-escuro) !important;
+  border-color: var(--verde-escuro) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   NAVBAR SUPERIOR
+   ══════════════════════════════════════════════════════════ */
+.main-header.navbar {
+  background: var(--verde-escuro) !important;
+  border-bottom: 3px solid var(--verde-claro) !important;
+  box-shadow: var(--sombra) !important;
+}
+
+.main-header .navbar-brand {
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  color: var(--branco) !important;
+  letter-spacing: 1px;
+}
+
+.main-header .nav-link,
+.main-header .navbar-text {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+.main-header .nav-link:hover {
+  color: var(--verde-claro) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   SIDEBAR / MENU LATERAL
+   ══════════════════════════════════════════════════════════ */
+.main-sidebar {
+  background: #1a2e1a !important;
+  box-shadow: 3px 0 10px rgba(0,0,0,0.2) !important;
+}
+
+.main-sidebar .brand-link {
+  background: var(--verde-escuro) !important;
+  border-bottom: 2px solid var(--verde-claro) !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+}
+
+.main-sidebar .brand-link .brand-text {
+  color: var(--branco) !important;
+}
+
+/* Itens do menu */
+.nav-sidebar .nav-item .nav-link {
+  color: rgba(255,255,255,0.75) !important;
+  border-radius: 8px !important;
+  margin: 2px 8px !important;
+  transition: all 0.2s !important;
+}
+
+.nav-sidebar .nav-item .nav-link:hover,
+.nav-sidebar .nav-item .nav-link:focus {
+  background: rgba(165,214,167,0.15) !important;
+  color: var(--verde-claro) !important;
+  transform: translateX(4px);
+}
+
+.nav-sidebar .nav-item.menu-open > .nav-link,
+.nav-sidebar .nav-item .nav-link.active {
+  background: var(--verde-medio) !important;
+  color: var(--branco) !important;
+  font-weight: 600 !important;
+}
+
+/* Cabeçalhos de seção no menu */
+.nav-sidebar .nav-header {
+  color: var(--verde-claro) !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 1.5px !important;
+  font-weight: 700 !important;
+  padding: 1rem 1rem 0.3rem !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   ÁREA DE CONTEÚDO PRINCIPAL
+   ══════════════════════════════════════════════════════════ */
+.content-wrapper {
+  background: #f0f4f0 !important;
+}
+
+.content-header h1 {
+  color: var(--verde-escuro) !important;
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+}
+
+/* Breadcrumb */
+.breadcrumb-item a {
+  color: var(--verde-medio) !important;
+}
+
+/* ── Cards / Info-boxes ─────────────────────────────────── */
+.card {
+  border-radius: 12px !important;
+  border: none !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+  overflow: hidden;
+}
+
+.card-header {
+  background: var(--verde-escuro) !important;
+  color: var(--branco) !important;
+  font-weight: 600 !important;
+  border-bottom: none !important;
+  padding: 0.9rem 1.2rem !important;
+}
+
+.card-header .card-title {
+  color: var(--branco) !important;
+  font-size: 1rem !important;
+}
+
+/* ── Tabelas de listagem ────────────────────────────────── */
+#result_list {
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: var(--sombra) !important;
+}
+
+#result_list thead th {
+  background: var(--verde-escuro) !important;
+  color: var(--branco) !important;
+  font-weight: 600 !important;
+  border: none !important;
+  padding: 0.8rem 1rem !important;
+}
+
+#result_list tbody tr:hover {
+  background: var(--verde-bg) !important;
+}
+
+#result_list tbody tr:nth-child(even) {
+  background: #f9fdf9;
+}
+
+#result_list tbody td {
+  border-color: #e8f0e8 !important;
+  padding: 0.65rem 1rem !important;
+}
+
+/* ── Botões ─────────────────────────────────────────────── */
+.btn-primary, .btn-success,
+input[type="submit"].default,
+.submit-row input[type="submit"] {
+  background: var(--verde-medio) !important;
+  border-color: var(--verde-medio) !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s !important;
+}
+
+.btn-primary:hover, .btn-success:hover,
+.submit-row input[type="submit"]:hover {
+  background: var(--verde-escuro) !important;
+  border-color: var(--verde-escuro) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(27,94,32,0.3) !important;
+}
+
+.btn-danger, .deletelink {
+  border-radius: 8px !important;
+}
+
+/* ── Campos de formulário ───────────────────────────────── */
+.form-control, select, textarea, input[type="text"],
+input[type="password"], input[type="email"], input[type="number"] {
+  border-radius: 8px !important;
+  border: 2px solid #e0e0e0 !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.form-control:focus, select:focus, textarea:focus {
+  border-color: var(--verde-medio) !important;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.12) !important;
+  outline: none !important;
+}
+
+/* ── Fieldsets (grupos de campos) ──────────────────────── */
+fieldset.module {
+  border-radius: 12px !important;
+  border: 2px solid #e8f0e8 !important;
+  overflow: hidden;
+  margin-bottom: 1.5rem !important;
+}
+
+fieldset.module h2 {
+  background: var(--verde-medio) !important;
+  color: var(--branco) !important;
+  padding: 0.7rem 1rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  border-radius: 0 !important;
+}
+
+/* ── Submit row (barra de salvar) ───────────────────────── */
+.submit-row {
+  background: var(--verde-bg) !important;
+  border-top: 2px solid var(--verde-claro) !important;
+  border-radius: 0 0 12px 12px !important;
+  padding: 1rem !important;
+}
+
+/* ── Paginação ──────────────────────────────────────────── */
+.paginator a, .paginator .this-page {
+  border-radius: 6px !important;
+  padding: 4px 10px !important;
+}
+
+.paginator a:hover {
+  background: var(--verde-bg) !important;
+  color: var(--verde-escuro) !important;
+}
+
+.paginator .this-page {
+  background: var(--verde-medio) !important;
+  color: var(--branco) !important;
+}
+
+/* ── Filtros laterais ───────────────────────────────────── */
+#changelist-filter {
+  border-radius: 12px !important;
+  border: 2px solid #e8f0e8 !important;
+  overflow: hidden;
+}
+
+#changelist-filter h2 {
+  background: var(--verde-escuro) !important;
+  color: var(--branco) !important;
+  font-size: 0.85rem !important;
+  padding: 0.7rem 1rem !important;
+  font-weight: 600 !important;
+}
+
+#changelist-filter h3 {
+  color: var(--verde-escuro) !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.5px;
+}
+
+#changelist-filter li.selected a {
+  color: var(--verde-escuro) !important;
+  font-weight: 700 !important;
+}
+
+/* ── Barra de busca ─────────────────────────────────────── */
+#toolbar {
+  background: var(--verde-bg) !important;
+  border-radius: 10px !important;
+  padding: 0.8rem !important;
+  margin-bottom: 1rem !important;
+}
+
+#searchbar {
+  border-radius: 8px !important;
+  border: 2px solid var(--verde-claro) !important;
+}
+
+#searchbar:focus {
+  border-color: var(--verde-medio) !important;
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+.main-footer {
+  background: var(--verde-escuro) !important;
+  color: rgba(255,255,255,0.7) !important;
+  border-top: 2px solid var(--verde-claro) !important;
+  font-size: 0.8rem !important;
+}
+
+/* ── Mensagens de sucesso/erro ──────────────────────────── */
+.alert-success, .success {
+  background: var(--verde-bg) !important;
+  border-left: 4px solid var(--verde-medio) !important;
+  color: var(--verde-escuro) !important;
+  border-radius: 8px !important;
+}
+
+/* ── Inline tables ──────────────────────────────────────── */
+.inline-group h2 {
+  background: var(--verde-medio) !important;
+  color: var(--branco) !important;
+}
+
+/* ── Checkbox e radio ───────────────────────────────────── */
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  accent-color: var(--verde-medio);
+}
+
+/* ── Dashboard app list ─────────────────────────────────── */
+.app-list .app-header {
+  background: var(--verde-escuro) !important;
+  color: var(--branco) !important;
+  border-radius: 10px 10px 0 0 !important;
+  padding: 0.7rem 1rem !important;
+}
+
+.app-list .model-link a {
+  color: var(--verde-escuro) !important;
+  font-weight: 500;
+}
+
+.app-list .model-link a:hover {
+  color: var(--verde-hover) !important;
+}

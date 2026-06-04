@@ -117,6 +117,7 @@ USE_TZ        = True
 
 STATIC_URL  = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_URL  = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -180,6 +181,9 @@ JAZZMIN_SETTINGS = {
     'site_brand':        'Painel ATRPAP',
     'welcome_sign':      'Bem-vindo ao Painel Administrativo da ATRPAP',
     'copyright':         'Associação dos Trabalhadores Rurais do PA Prata',
+
+    # CSS personalizado
+    'custom_css': 'admin/css/atrpap_admin.css',
 
     # Ícone do site (pode trocar por um favicon real depois)
     'site_icon': None,

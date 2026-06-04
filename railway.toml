@@ -3,4 +3,4 @@ builder = "dockerfile"
 dockerfilePath = "backend/Dockerfile"
 
 [deploy]
-releaseCommand = "python manage.py migrate --noinput"
+releaseCommand = "python manage.py migrate --noinput && python manage.py collectstatic --noinput"
